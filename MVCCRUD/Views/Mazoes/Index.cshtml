@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MVCCRUD.Models.Mazo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Mazos</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear Nuevo Mazo</a>
+</p>
+<div class="table-responsive" style="max-height: 60vh; overflow-y: auto;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Nombre del Mazo
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MazoNombre)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.IdMazo"><i class="bi bi-pencil-square"></i></a> |
+                        <a asp-action="Details" class="btn btn-info" asp-route-id="@item.IdMazo"><i class="bi bi-info-circle"></i></a> |
+                        <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IdMazo"><i class="bi bi-trash3"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

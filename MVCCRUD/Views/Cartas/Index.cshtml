@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MVCCRUD.Models.Carta>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cartas</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear nueva carta</a>
+</p>
+<div class="table-responsive" style="max-height: 60vh; overflow-y: auto;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Tipo
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Ataque
+                </th>
+                <th>
+                    Defensa
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoCarta)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreCarta)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PoderAtaque)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PoderDefensa)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.IdCarta"><i class="bi bi-pencil-square"></i></a> |
+                        <a asp-action="Details" class="btn btn-info" asp-route-id="@item.IdCarta"><i class="bi bi-info-circle"></i></a> |
+                        <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IdCarta"><i class="bi bi-trash3"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

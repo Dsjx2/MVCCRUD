@@ -1,0 +1,26 @@
+﻿@model MVCCRUD.Models.Mazo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Mazo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-4">
+            Nombre del Mazo: 
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.MazoNombre)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdMazo" class="btn btn-warning">Editar</a>
+    <div class="d-flex justify-content-end">
+        <a asp-action="Index" class="btn btn-danger">Regresar<i class="bi bi-arrow-return-left"></i></a>
+    </div>
+</div>

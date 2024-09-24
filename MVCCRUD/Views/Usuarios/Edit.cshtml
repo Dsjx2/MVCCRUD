@@ -4,9 +4,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Actualizar Información</h1>
 
-<h4>Usuario</h4>
+<h4>Jugador</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -28,17 +28,18 @@
                 <input asp-for="Clave" class="form-control" />
                 <span asp-validation-for="Clave" class="text-danger"></span>
             </div>
+            <p>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
             </div>
+            
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="d-flex justify-content-end">
+    <a asp-action="Index" class="btn btn-danger">Regresar<i class="bi bi-arrow-return-left"></i></a>
 </div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -1,4 +1,8 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
+﻿function mostrarAlerta(titulo, texto, icono) {
+    Swal.fire({
+        title: titulo,       // Usando el parámetro 'titulo'
+        text: texto,         // Usando el parámetro 'texto'
+        icon: icono,         // Usando el parámetro 'icono'
+        confirmButtonText: 'Aceptar'
+    });
+}

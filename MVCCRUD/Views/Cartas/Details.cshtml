@@ -1,0 +1,44 @@
+﻿@model MVCCRUD.Models.Carta
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles de la carta</h1>
+
+<div>
+    <h4>Carta</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoCarta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoCarta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreCarta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreCarta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PoderAtaque)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PoderAtaque)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PoderDefensa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PoderDefensa)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdCarta" class="btn btn-warning">Editar</a>
+    <div class="d-flex justify-content-end">
+        <a asp-action="Index" class="btn btn-danger">Regresar<i class="bi bi-arrow-return-left"></i></a>
+    </div>
+</div>
